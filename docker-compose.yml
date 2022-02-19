@@ -10,5 +10,9 @@ services:
   mongo_db:
     image: "mongo:4.4.3"
     restart: always
+    volumes:
+      - app_mongodb_test:/data/db
     ports:
       - "27019:27017"
+volumes:
+  app_mongodb_test:
