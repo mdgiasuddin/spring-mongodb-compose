@@ -1,29 +1,14 @@
-#version: "3.7"
-#services:
-#  api_service:
-#    build: .
-#    restart: always
-#    ports:
-#      - 8080:8080
-#    links:
-#      - mongo_db:app_db
-#  mongo_db:
-#    image: "mongo:4.4.3"
-#    restart: always
-#    ports:
-#      - 27017:27017
-
 version: "3.7"
 services:
   api_service:
     build: .
     restart: always
     ports:
-      - 8080:8080
+      - "9312:9311"
     depends_on:
       - mongo_db
   mongo_db:
     image: "mongo:4.4.3"
     restart: always
     ports:
-      - 27017:27017
+      - "27019:27017"
